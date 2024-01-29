@@ -18,6 +18,4 @@ public class Stock extends BaseEntity {
 
     private String stock_name;
 
-    private String stock_code;
-
 }
