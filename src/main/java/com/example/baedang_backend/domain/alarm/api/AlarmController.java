@@ -19,7 +19,7 @@ public class AlarmController {
 
     private final AlarmService alarmService;
 
-    @GetMapping("/api/notice/{member_id}")
+    @GetMapping("/api/alarm/{member_id}")
     public List<AlarmListDto> findAlarmsByMemberId(@PathVariable Long member_id) {
         List<AlarmListDto> alarmList = alarmService.findAlarmsByMemberId(member_id);
 
