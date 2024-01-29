@@ -18,5 +18,4 @@ public class Stock extends BaseEntity {
 
     private String stock_name;
 
-    private String image_url;
 }
