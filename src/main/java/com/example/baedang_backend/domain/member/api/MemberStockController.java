@@ -29,4 +29,11 @@ public class MemberStockController {
 
         return addStock;
     }
+
+    @DeleteMapping(value="/api/stock/{user_id}")
+    public Long deleteMemberStock(@PathVariable Long user_id, @RequestBody DeleteStockRequestDto deleteStockRequestDto) {
+        Long deleteStockId = memberStockService.deleteMemberStock(user_id, deleteStockRequestDto.getStock_id());
+
+        return deleteStockId;
+    }
 }

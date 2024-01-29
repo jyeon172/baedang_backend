@@ -82,4 +82,12 @@ public class MemeberStockDto {
                     .build();
         }
     }
+
+    @Getter
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class DeleteStockRequestDto {
+        private Long stock_id;
+    }
 }

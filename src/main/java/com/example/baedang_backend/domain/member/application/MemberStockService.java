@@ -55,4 +55,16 @@ public class MemberStockService {
 
         return new AddStockResponseDto().toResponseDto(savedMember);
     }
+
+    @Transactional
+    public Long deleteMemberStock(Long memberId, Long stockId) {
+        Stock stock = stockRepository.findById(stockId).orElseThrow();
+
+        Member member = memberRepository.findById(memberId).orElseThrow();
+
+        List<MemberStock> deleteStockList = memberStockRepository.findByMemberAndStock(member.getId(), stock.getId());
+        memberStockRepository.deleteAll(deleteStockList);
+
+        return memberId;
+    }
 }

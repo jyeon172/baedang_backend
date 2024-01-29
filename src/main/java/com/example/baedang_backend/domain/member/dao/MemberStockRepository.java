@@ -12,4 +12,7 @@ public interface MemberStockRepository extends JpaRepository<MemberStock, Long> 
 
     @EntityGraph(attributePaths = {"stock"})
     List<MemberStock> findStocksByMemberId(Long member_id);
+
+    @Query(value = "SELECT * FROM member_stock ms WHERE ms.member_id = :member_id and ms.stock_id = :stock_id", nativeQuery = true)
+    List<MemberStock> findByMemberAndStock(@Param("member_id") Long member_id, @Param("stock_id") Long stock_id);
 }
